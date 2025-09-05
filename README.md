@@ -104,7 +104,3 @@ This project is licensed under the **MIT License** – feel free to use and modi
 * [SymPy](https://www.sympy.org/)
 * [Wikipedia API](https://pypi.org/project/wikipedia/)
 
-
-
-👉 Do you want me to also generate a **`requirements.txt`** file automatically from your imports? That way, your project will be ready-to-run on GitHub.
-```
