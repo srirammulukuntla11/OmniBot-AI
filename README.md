@@ -51,7 +51,7 @@ It can chat, solve math problems, fetch information from Wikipedia, generate sto
 
 ├── templates/
 
-  └── index.html    # Chat UI (if implemented)
+    └── index.html    # Chat UI (if implemented)
 
 ⚡ Installation
 1. Clone the Repository
