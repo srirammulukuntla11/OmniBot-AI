@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Virtual Assistant</title>
+  <style>
+    body {
+      background: #f2f2f2;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .chat-container {
+      background: white;
+      width: 400px;
+      height: 500px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .chat-box {
+      flex: 1;
+      padding: 20px;
+      overflow-y: auto;
+    }
+
+    .message {
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 8px;
+      max-width: 80%;
+    }
+
+    .user {
+      background-color: #daf1ff;
+      align-self: flex-end;
+    }
+
+    .bot {
+      background-color: #eee;
+      align-self: flex-start;
+    }
+
+    .input-box {
+      display: flex;
+      border-top: 1px solid #ddd;
+    }
+
+    input {
+      flex: 1;
+      border: none;
+      padding: 15px;
+      font-size: 16px;
+    }
+    .chat-header {
+      padding: 15px;
+      background-color: #007bff;
+      color: white;
+      text-align: center
+    }
+
+    button {
+      padding: 15px;
+      border: none;
+      background: #4CAF50;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+<div class="chat-container">
+  <div class="chat-header">
+    Vishal Team 
+  </div>
+  <div class="chat-box" id="chat-box"></div>
+  <div class="input-box">
+    <input type="text" id="user-input" placeholder="Type a message..." />
+    <button onclick="sendMessage()">Send</button>
+  </div>
+</div>
+
+<script>
+  async function sendMessage() {
+    const input = document.getElementById("user-input");
+    const message = input.value.trim();
+    if (!message) return;
+
+    addMessage("user", message);
+    input.value = "";
+
+    // Send to backend (for now we'll simulate a response)
+    const response = await fetch("http://127.0.0.1:5000/chat", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ message: message })
+    });
+
+    const data = await response.json();
+    if (data.reply === "OPEN_YOUTUBE") {
+  window.open("https://youtube.com", "_blank");
+  addMessage("bot", "Opening YouTube for you...");
+} else if (data.reply === "OPEN_GOOGLE") {
+  window.open("https://google.com", "_blank");
+  addMessage("bot", "Opening Google for you...");
+} else if (data.reply === "OPEN_FACEBOOK") {
+  window.open("https://facebook.com", "_blank");
+  addMessage("bot", "Opening Facebook for you...");
+} else if (data.reply === "OPEN_SBTET") {
+  window.open("https://www.sbtet.telangana.gov.in", "_blank");
+  addMessage("bot", "Opening SBTET for you...");
+} else if (data.reply === "OPEN_MUSIC") {
+  window.open("https://gaana.com", "_blank");
+  addMessage("bot", "Opening Facebook for you...");
+}   else {
+  addMessage("bot", data.reply);
+}
+
+  }
+
+  function addMessage(sender, text) {
+    const msgDiv = document.createElement("div");
+    msgDiv.classList.add("message", sender);
+    msgDiv.innerText = text;
+    document.getElementById("chat-box").appendChild(msgDiv);
+    document.getElementById("chat-box").scrollTop = document.getElementById("chat-box").scrollHeight;
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+{
+  "bubble sort": "def bubble_sort(arr):\n    n = len(arr)\n    for i in range(n):\n        for j in range(0, n-i-1):\n            if arr[j] > arr[j+1]:\n                arr[j], arr[j+1] = arr[j+1], arr[j]\n    return arr\n\nprint(bubble_sort([64, 34, 25, 12, 22, 11, 90]))",
+  
+  "factorial": "def factorial(n):\n    return 1 if n == 0 else n * factorial(n-1)\n\nprint(factorial(5))",
+
+  "fibonacci": "def fibonacci(n):\n    a, b = 0, 1\n    for _ in range(n):\n        print(a, end=' ')\n        a, b = b, a + b\n\nfibonacci(10)",
+
+  "palindrome": "def is_palindrome(s):\n    return s == s[::-1]\n\nprint(is_palindrome(\"radar\"))",
+
+  "prime number": "def is_prime(n):\n    if n <= 1:\n        return False\n    for i in range(2, int(n**0.5)+1):\n        if n % i == 0:\n            return False\n    return True\n\nprint(is_prime(29))",
+
+  "linear search": "def linear_search(arr, x):\n    for i in range(len(arr)):\n        if arr[i] == x:\n            return i\n    return -1\n\nprint(linear_search([10, 20, 30, 40], 30))",
+
+  "binary search": "def binary_search(arr, x):\n    low, high = 0, len(arr) - 1\n    while low <= high:\n        mid = (low + high) // 2\n        if arr[mid] == x:\n            return mid\n        elif arr[mid] < x:\n            low = mid + 1\n        else:\n            high = mid - 1\n    return -1\n\nprint(binary_search([10, 20, 30, 40, 50], 40))",
+
+  "reverse string": "def reverse_string(s):\n    return s[::-1]\n\nprint(reverse_string(\"hello\"))",
+
+  "sum of digits": "def sum_of_digits(n):\n    return sum(int(digit) for digit in str(n))\n\nprint(sum_of_digits(1234))",
+
+  "armstrong number": "def is_armstrong(n):\n    num_str = str(n)\n    num_len = len(num_str)\n    return n == sum(int(digit)**num_len for digit in num_str)\n\nprint(is_armstrong(153))",
+
+  "count vowels": "def count_vowels(s):\n    vowels = 'aeiouAEIOU'\n    return sum(1 for char in s if char in vowels)\n\nprint(count_vowels('hello world'))",
+
+  "gcd (Greatest Common Divisor)": "def gcd(a, b):\n    while b:\n        a, b = b, a % b\n    return a\n\nprint(gcd(56, 98))",
+
+  "lcm (Least Common Multiple)": "def lcm(a, b):\n    return abs(a * b) // gcd(a, b)\n\nprint(lcm(4, 5))",
+
+  "power of a number": "def power(base, exp):\n    return base ** exp\n\nprint(power(2, 3))",
+
+  "even or odd": "def is_even_or_odd(n):\n    return 'Even' if n % 2 == 0 else 'Odd'\n\nprint(is_even_or_odd(7))",
+
+  "count words in string": "def count_words(s):\n    return len(s.split())\n\nprint(count_words('Hello World!'))",
+
+  "find largest element in list": "def find_largest(arr):\n    return max(arr)\n\nprint(find_largest([10, 20, 30, 40, 50]))",
+
+  "remove duplicates from list": "def remove_duplicates(arr):\n    return list(set(arr))\n\nprint(remove_duplicates([1, 2, 3, 2, 1, 4]))",
+
+  "sort list alphabetically": "def sort_alphabetically(arr):\n    return sorted(arr)\n\nprint(sort_alphabetically(['banana', 'apple', 'cherry']))",
+
+  "convert celsius to fahrenheit": "def celsius_to_fahrenheit(celsius):\n    return (celsius * 9/5) + 32\n\nprint(celsius_to_fahrenheit(25))",
+
+  "convert fahrenheit to celsius": "def fahrenheit_to_celsius(fahrenheit):\n    return (fahrenheit - 32) * 5/9\n\nprint(fahrenheit_to_celsius(77))",
+
+  "count occurrences of element": "def count_occurrences(arr, x):\n    return arr.count(x)\n\nprint(count_occurrences([1, 2, 3, 4, 2, 2], 2))",
+
+  "remove all whitespaces": "def remove_whitespaces(s):\n    return ''.join(s.split())\n\nprint(remove_whitespaces('  H e l l o  W o r l d  '))"
+}
