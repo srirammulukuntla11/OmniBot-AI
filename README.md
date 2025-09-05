@@ -1,6 +1,6 @@
-🧠 AI Chatbot with Flask
+🤖 OmniBot AI – Your All-in-One Virtual Assistant
 
-This project is an **AI-powered Virtual Assistant** built using **Flask**.  
+OmniBot AI is an **AI-powered Virtual Assistant** built using **Flask**.  
 It can chat, solve math problems, fetch information from Wikipedia, generate stories, provide disease information, detect objects in images, and even process uploaded files.  
 
 🚀 Features
