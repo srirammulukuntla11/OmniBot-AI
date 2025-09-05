@@ -44,8 +44,11 @@ It can chat, solve math problems, fetch information from Wikipedia, generate sto
 📂 Project Structure
 
 ├── segmentation.py   # Flask app with object detection + file handling
+
 ├── hi.py             # Flask app with segmentation + story + extended logic
+
 ├── programs.json     # Predefined Python program snippets
+
 ├── templates/
 │   └── index.html    # Chat UI (if implemented)
 
