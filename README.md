@@ -41,18 +41,6 @@ It can chat, solve math problems, fetch information from Wikipedia, generate sto
 - Speech synthesis with `pyttsx3`
 - Can be extended for mute/unmute and male/female voice selection
 
-📂 Project Structure
-
-├── segmentation.py   # Flask app with object detection + file handling
-
-├── hi.py             # Flask app with segmentation + story + extended logic
-
-├── programs.json     # Predefined Python program snippets
-
-├── templates/
-
-    └── index.html    # Chat UI (if implemented)
-
 ⚡ Installation
 1. Clone the Repository
 ```bash
